@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: image-uploader
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn ImageUploader.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: ImageUploader.settings
+      - key: SECRET_KEY
+        value: -0f4nkl9014eiomb&15a)ave67q#1+e%p6-x-k17ewh6!y!1!y
